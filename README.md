@@ -23,3 +23,11 @@ I'm too lazy to add these things:
 * proper command line args, like the ability to specify a message id to start at, or the ability to choose a specific outfile location, or an option to show the messages to stdout as they're being saved
 
 I won't be actively developing this, but feel free to fork it yourself.
+
+## example output file
+```
+[2017-07-28 03:43:50] <tjb0607> i love jade harley <3
+[2017-07-28 03:45:26] <tjb0607> 
+[[ attachment: https://cdn.discordapp.com/attachments/304892646395084801/340444637498048522/my_wife.png ]]
+[2017-07-28 03:47:38] <tjb_alt> shes so cute
+```
