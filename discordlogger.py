@@ -24,17 +24,32 @@ if ( os.path.isfile('./.discord-' + channel + '.log.lastmessageid') ):
 
 c = http.client.HTTPSConnection('discordapp.com', 443)
 
-email = input("Email: ")
-password = getpass.getpass("Password: ")
-token = ""
-c.request("POST", "https://discordapp.com/api/auth/login", json.dumps({"email": email, "password": password}), {"Content-type": "application/json"})
-password = ""
-response = json.loads(c.getresponse().read().decode("utf-8"))
-if "mfa" in response and "ticket" in response:
-	code = input("2FA code: ")
-	c.request("POST", "https://discordapp.com/api/auth/mfa/totp", json.dumps({"ticket": response["ticket"], "code": code}), {"Content-type": "application/json"})
-	response = json.loads(c.getresponse().read().decode("utf-8"))
-token = response["token"]
+## using /api/auth/login, ESPECIALLY with 2fa enabled, "will" get your account banned.
+## https://github.com/hammerandchisel/discord-api-docs/issues/69#issuecomment-223886862
+
+#email = input("Email: ")
+#password = getpass.getpass("Password: ")
+#token = ""
+#c.request("POST", "https://discordapp.com/api/auth/login", json.dumps({"email": email, "password": password}), {"Content-type": "application/json"})
+#password = ""
+#response = json.loads(c.getresponse().read().decode("utf-8"))
+#if "mfa" in response and "ticket" in response:
+#	code = input("2FA code: ")
+#	c.request("POST", "https://discordapp.com/api/auth/mfa/totp", json.dumps({"ticket": response["ticket"], "code": code}), {"Content-type": "application/json"})
+#	response = json.loads(c.getresponse().read().decode("utf-8"))
+#token = response["token"]
+
+print("""
+Get your API token from Discord. This will give this script full access to your Discord account.
+
+1. Open the console (Ctrl+Shift+I)
+2. Go to the Application tab
+3. Expand "Local Storage" on the left side panel
+4. Select "https://discordapp.com"
+5. Copy the value for Token, without the quotes.
+
+""")
+token = input("Token: ")
 
 outfile = open("./discord-" + channel + ".log", "a")
 done = 0
