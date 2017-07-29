@@ -42,7 +42,7 @@ c = http.client.HTTPSConnection('discordapp.com', 443)
 print("""
 Get your API token from Discord. This will give this script full access to your Discord account.
 
-1. Open the console (Ctrl+Shift+I)
+1. Open the console in Discord (Ctrl+Shift+I)
 2. Go to the Application tab
 3. Expand "Local Storage" on the left side panel
 4. Select "https://discordapp.com"
