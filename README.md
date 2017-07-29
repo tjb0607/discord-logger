@@ -1,6 +1,5 @@
 # discord-logger
-WARNING: By using this, you are violating Discord's ToS and potentially putting yourself at risk of being banned!  
-If you can use a bot account instead, please do so!!! self-botting (e.g. using this script) is against the rules, avoid it if at all possible.
+WARNING: Self-botting is technically against the rules, so this script could potentially get you banned.
 
 This script is intended for logging private messages, but should work with any other channels, including group chats. It fetches 200 messages per second, so it will take a quite while to download longer chat logs.
 
