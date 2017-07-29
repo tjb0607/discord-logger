@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# WARNING: by using this, you are violating Discord's ToS and potentially putting yourself at risk of being banned!
+# WARNING: Self-botting is technically against the rules, so this script could potentially get you banned.
 
 import http.client
 import json
