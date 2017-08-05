@@ -69,10 +69,11 @@ while done == 0:
 			done = 1
 	else:
 		print("fatal error: api responded with status " + str(response.status))
-		done = 1
+		done = 2
 	time.sleep(0.25)
 outfile.close()
 
-outfile = open("./.discord-" + channel + ".log.lastmessageid", "w")
-outfile.write(after)
-outfile.close()
+if done == 1:
+	outfile = open("./.discord-" + channel + ".log.lastmessageid", "w")
+	outfile.write(after)
+	outfile.close()
