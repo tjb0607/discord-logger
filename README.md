@@ -17,6 +17,8 @@ it will output to `./discord-<channel id>.log`, and also create a hidden file ca
 
 I'm too lazy to add these things:
 
+* actually listening to discord ratelimit errors(!!!!!!!)
+
 * ability to resume after being interrupted (e.g. by ctrl+c)
 
 * proper command line args, like the ability to specify a message id to start at, or the ability to choose a specific outfile location, or an option to show the messages to stdout as they're being saved
