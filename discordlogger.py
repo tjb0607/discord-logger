@@ -40,14 +40,7 @@ c = http.client.HTTPSConnection('discordapp.com', 443)
 #token = response["token"]
 
 print("""
-Get your API token from Discord.
-WARNING: This will give this script FULL access to your Discord account!!! Be extremely careful to review this entire script and know that you could be banned for using it!
-
-1. Open the console in Discord (Ctrl+Shift+I)
-2. Go to the Application tab
-3. Expand "Local Storage" on the left side panel
-4. Select "https://discordapp.com"
-5. Copy the value for Token, without the quotes.
+WARNING: this is really old code, and also self-botting is against TOS and can get you banned. Please use this on a Bot account ONLY, and use at your own risk.
 
 """)
 token = input("Token: ")
@@ -55,7 +48,7 @@ token = input("Token: ")
 outfile = open("./discord-" + channel + ".log", "a")
 done = 0
 while done == 0:
-	c.request("GET", "https://discordapp.com/api/channels/" + channel + "/messages?" + urllib.parse.urlencode({"after": str(after), "limit": "50", "token": token}))
+	c.request("GET", "https://discordapp.com/api/channels/" + channel + "/messages?" + urllib.parse.urlencode({"after": str(after), "limit": "50"}), headers={"authorization": token})
 	response = c.getresponse()
 	if response.status == 200:
 		messages = json.loads(response.read().decode("utf-8"))
